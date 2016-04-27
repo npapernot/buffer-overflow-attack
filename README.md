@@ -5,6 +5,9 @@ running Ubuntu. It shows how one can use a buffer overflow to obtain a root
 shell. The end of the tutorial also demonstrates how two defenses in the Ubuntu
 OS prevent the simple buffer overflow attack implemented here.
 
+This tutorial leverages the paper written by alephOne on buffer overflows:
+<http://cecs.wright.edu/~tkprasad/courses/cs781/alephOne.html>
+
 ## Initial Setup of the Virtual Machine
 
 Let us first go through the initial setup of the virtual machine used to
@@ -55,10 +58,9 @@ chmod 4755 stack
 
 We now need to craft the `badfile` file that will be read by this vulnerable
 program 'stack' and stored in the buffer, which will be overflowed. The file
-`exploit.c` contains initial code that I completed in order to dump the buffer
-that will be read by the vulnerable program. The code is well commented and
-should be fairly understandable and leverages sample code provided in the paper
-by alephOne. 
+`exploit.c` contains code that dumps the buffer that will be read by the
+vulnerable program. The code is well commented and should be fairly
+understandable and leverages sample code provided in the paper by alephOne. 
 
 To demonstrate the buffer flow attack, we run the following commands:
 
